@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>{{name}}</h1>
+    
+    {% for n in list %}
+          <div>{{n.name}}</div>
+          <div>{{forloop.last}}</div>
+    {% endfor %}
+
+
+    <table border="1" cellpadding="10">
+      <tr>
+        <th>Name</th>
+        <th>Phone</th>
+      </tr>
+      {% for n in list %}
+      <tr>
+        <th>{{n.name}}</th>
+        <th>{{n.phone}}</th>
+      </tr>
+      {% endfor %}
+    </table>
+
+
+    {% if numbers|length > 10 %}
+      {% for n in numbers %} 
+        {% if n > 0 %}
+          <div>{{n}}</div>
+        {% endif %} 
+      {% endfor%} 
+    {% else %} no data found {% endif%}
+
+
+  </body>
+</html>
