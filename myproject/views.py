@@ -24,8 +24,8 @@ def userForm(request):
     try:
         # n1 = request.GET['name']
         # n2 = request.GET['email']
-        n1=request.GET.get("name")
-        n2=request.GET.get("email")
+        n1=int(request.GET.get("name"))
+        n2=int(request.GET.get("email"))
         dummy =n1+n2
         print(dummy)
     except : 
