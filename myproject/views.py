@@ -19,4 +19,16 @@ def products(request):
 def courseDetail(request,courseid):
     return HttpResponse(courseid)
 
+def userForm(request):
+    dummy =0 
+    try:
+        # n1 = request.GET['name']
+        # n2 = request.GET['email']
+        n1=request.GET.get("name")
+        n2=request.GET.get("email")
+        dummy =n1+n2
+        print(dummy)
+    except : 
+        pass
+    return render(request, "userform.html",{"output":dummy})
 #we pass 3 types of value trough rdynamic routing (int,str,slug(gello-07-jhhh))

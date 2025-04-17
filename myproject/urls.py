@@ -22,5 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('about-us/', views.aboutUs,name="about"),
     path('about/<slug:courseid>', views.courseDetail),
-    path('product/',views.products, name="product")
+    path('product/',views.products, name="product"),
+    path("userform/",views.userForm)
 ]

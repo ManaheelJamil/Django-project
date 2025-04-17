@@ -1,0 +1,20 @@
+{% extends "base.html" %} {% block blockname %}
+<div class="body">
+  <div class="form-container">
+    <h3>User Form</h3>
+    <form>
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password"  />
+
+      <button type="submit">Submit</button>
+      <input type="text" value="{{output}}"/>
+    </form>
+  </div>
+</div>
+  {% endblock %}
