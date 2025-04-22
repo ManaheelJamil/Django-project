@@ -2,7 +2,8 @@
 <div class="body">
   <div class="form-container">
     <h3>User Form</h3>
-    <form>
+    <form method="post">
+{% csrf_token %}
       <label for="name">Value1</label>
       <input type="text" id="name" name="name" required />
 

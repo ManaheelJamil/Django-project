@@ -20,12 +20,16 @@ def courseDetail(request,courseid):
     return HttpResponse(courseid)
 
 def userForm(request):
-    dummy =0 
+    dummy=0 
     try:
+        # if request.method =="GET":
+        if request.method == "POST":
         # n1 = request.GET['name']
         # n2 = request.GET['email']
-        n1=int(request.GET.get("name"))
-        n2=int(request.GET.get("email"))
+        # n1=int(request.GET.get("name"))
+        # n2=int(request.GET.get("email"))
+          n1=int(request.POST.get("name"))
+        n2=int(request.POST.get("email"))
         dummy =n1+n2
         print(dummy)
     except : 
