@@ -5,10 +5,10 @@
     <form method="post">
 {% csrf_token %}
       <label for="name">Value1</label>
-      <input type="text" id="name" name="name" required />
+      <input type="text" id="name" value="{{n1}}" name="name" required />
 
       <label for="email">Value2</label>
-      <input type="text" id="email" name="email" required />
+      <input type="text" id="email" value="{{n2}}" name="email" required />
 
       <button type="submit">Submit</button>
       <label for="email">OutPut</label>

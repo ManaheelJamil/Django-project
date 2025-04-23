@@ -1,5 +1,5 @@
-from django.http import HttpResponse
-from django.shortcuts import render
+from django.http import HttpResponse,HttpResponseRedirect
+from django.shortcuts import render,redirect
 def homepage(request):
     # data={
     #     "title":"home page",
@@ -14,13 +14,17 @@ def aboutUs(request):
     return render(request, "aboutus.html")
 
 def products(request):
-    return render(request, "product.html")
-# using this we can show id through dynmaic routing
+   if request.method == "GET":
+    output=request.GET.get('output')
+    return render(request, "product.html",{"output":output})
+    #using this we can get value from url and send on page 
 def courseDetail(request,courseid):
     return HttpResponse(courseid)
+# using this we can show id through dynmaic routing
 
 def userForm(request):
     dummy=0 
+    data={}
     try:
         # if request.method =="GET":
         if request.method == "POST":
@@ -32,7 +36,14 @@ def userForm(request):
         n2=int(request.POST.get("email"))
         dummy =n1+n2
         print(dummy)
+        data={
+            "n1":n1,
+            "n2":n2,
+            "output":dummy
+        }
+        url = "/product/?output={}".format(dummy)
+        return HttpResponseRedirect(url)
     except : 
         pass
-    return render(request, "userform.html",{"output":dummy})
+    return render(request, "userform.html",data)
 #we pass 3 types of value trough rdynamic routing (int,str,slug(gello-07-jhhh))
