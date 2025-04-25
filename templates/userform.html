@@ -2,7 +2,7 @@
 <div class="body">
   <div class="form-container">
     <h3>User Form</h3>
-    <form method="post">
+    <form method="post" action="{% url 'submitform' %}">
 {% csrf_token %}
       <label for="name">Value1</label>
       <input type="text" id="name" value="{{n1}}" name="name" required />

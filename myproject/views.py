@@ -22,6 +22,24 @@ def courseDetail(request,courseid):
     return HttpResponse(courseid)
 # using this we can show id through dynmaic routing
 
+def submitform(request):
+   try:
+        if request.method == "POST":
+          n1=int(request.POST.get("name"))
+          n2=int(request.POST.get("email"))
+          dummy =n1+n2
+          print(dummy)
+          data={
+            "n1":n1,
+            "n2":n2,
+            "output":dummy
+          }
+          return HttpResponse(dummy)
+   except:
+        pass
+
+
+
 def userForm(request):
     dummy=0 
     data={}
