@@ -1,5 +1,9 @@
 from django.http import HttpResponse,HttpResponseRedirect
 from django.shortcuts import render,redirect
+from .forms import usersForm
+
+
+
 def homepage(request):
     # data={
     #     "title":"home page",
@@ -37,11 +41,11 @@ def submitform(request):
           return HttpResponse(dummy)
    except:
         pass
-
-
+    
 
 def userForm(request):
     dummy=0 
+    fn = usersForm()
     data={}
     try:
         # if request.method =="GET":
@@ -50,13 +54,12 @@ def userForm(request):
         # n2 = request.GET['email']
         # n1=int(request.GET.get("name"))
         # n2=int(request.GET.get("email"))
-          n1=int(request.POST.get("name"))
-        n2=int(request.POST.get("email"))
-        dummy =n1+n2
+            n1=int(request.POST.get("name"))
+            n2=int(request.POST.get("email"))
+            dummy =n1+n2
         print(dummy)
         data={
-            "n1":n1,
-            "n2":n2,
+            "form":fn,
             "output":dummy
         }
         url = "/product/?output={}".format(dummy)

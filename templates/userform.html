@@ -3,13 +3,13 @@
   <div class="form-container">
     <h3>User Form</h3>
     <form method="post" action="{% url 'submitform' %}">
-{% csrf_token %}
-      <label for="name">Value1</label>
+      {% csrf_token %}
+      {% comment %} <label for="name">Value1</label>
       <input type="text" id="name" value="{{n1}}" name="name" required />
 
       <label for="email">Value2</label>
-      <input type="text" id="email" value="{{n2}}" name="email" required />
-
+      <input type="text" id="email" value="{{n2}}" name="email" required /> {% endcomment %}
+      {{form}}
       <button type="submit">Submit</button>
       <label for="email">OutPut</label>
 
