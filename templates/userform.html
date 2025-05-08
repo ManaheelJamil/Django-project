@@ -2,17 +2,16 @@
 <div class="body">
   <div class="form-container">
     <h3>User Form</h3>
-    <form method="post" action="{% url 'submitform' %}">
+    <form method="post" >
       {% csrf_token %}
-      {% comment %} <label for="name">Value1</label>
+     {% comment %} <label for="name">Value1</label>
       <input type="text" id="name" value="{{n1}}" name="name" required />
 
       <label for="email">Value2</label>
-      <input type="text" id="email" value="{{n2}}" name="email" required /> {% endcomment %}
+      <input type="text" id="email" value="{{n2}}" name="email" required />  {% endcomment %}
       {{form}}
       <button type="submit">Submit</button>
       <label for="email">OutPut</label>
-
       <input type="text" value="{{output}}"/>
     </form>
   </div>

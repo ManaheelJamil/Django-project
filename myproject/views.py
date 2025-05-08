@@ -31,7 +31,7 @@ def submitform(request):
         if request.method == "POST":
           n1=int(request.POST.get("name"))
           n2=int(request.POST.get("email"))
-          dummy =n1+n2
+          dummy = n1+n2
           print(dummy)
           data={
             "n1":n1,
@@ -41,30 +41,46 @@ def submitform(request):
           return HttpResponse(dummy)
    except:
         pass
-    
+
+   return render(request, 'result.html')
+   
+# def userForm(request):
+#     dummy=0 
+#     data={}
+#     try:
+#         # if request.method =="GET":
+#         if request.method == "POST":
+#         # n1 = request.GET['name']
+#         # n2 = request.GET['email']
+#         # n1=int(request.GET.get("name"))
+#         # n2=int(request.GET.get("email"))
+#             n1=int(request.POST.get("name"))
+#             n2=int(request.POST.get("email"))
+#             dummy = n1+n2
+#         print(dummy)
+#         data={
+#             "n1":n1,
+#             "n2":n2,
+#             "output":dummy
+#         }
+
+#         url = "/product/?output={}".format(dummy)
+#         return HttpResponseRedirect(url)
+#     except : 
+#         pass
+#     return render(request, "userform.html",data)
 
 def userForm(request):
-    dummy=0 
-    fn = usersForm()
-    data={}
-    try:
-        # if request.method =="GET":
-        if request.method == "POST":
-        # n1 = request.GET['name']
-        # n2 = request.GET['email']
-        # n1=int(request.GET.get("name"))
-        # n2=int(request.GET.get("email"))
-            n1=int(request.POST.get("name"))
-            n2=int(request.POST.get("email"))
-            dummy =n1+n2
-        print(dummy)
-        data={
-            "form":fn,
-            "output":dummy
-        }
-        url = "/product/?output={}".format(dummy)
-        return HttpResponseRedirect(url)
-    except : 
-        pass
-    return render(request, "userform.html",data)
-#we pass 3 types of value trough rdynamic routing (int,str,slug(gello-07-jhhh))
+    data = {}
+    if request.method == "POST":
+        form = usersForm(request.POST)
+        if form.is_valid():
+            n1 = form.cleaned_data['num1']
+            n2 = form.cleaned_data['num2']
+            output = n1 + n2
+            return redirect(f"/product/?output={output}")
+    else:
+        form = usersForm()
+
+    data['form'] = form
+    return render(request, "userform.html", data)
