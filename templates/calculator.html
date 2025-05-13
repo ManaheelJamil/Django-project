@@ -1,0 +1,33 @@
+{% extends "base.html" %} {% block blockname %}
+<div class="body">
+  <div class="form-container">
+    <h3>Calculator</h3>
+    <form class="calculator" method="post">
+      {% csrf_token %}
+      <input
+        type="text"
+        id="num1"
+        value="{{n1}}"
+        name="num1"
+        placeholder="Enter first number"
+      />
+      <select id="operator" name="opr">
+        <option value="+">➕ Add</option>
+        <option value="-">➖ Subtract</option>
+        <option value="*">✖ Multiply</option>
+        <option value="/">➗ Divide</option>
+      </select>
+      <input
+        type="text"
+        id="num2"
+        value="{{n2}}"
+        name="num2"
+        placeholder="Enter second number"
+      />
+      <button type="submit">Calculate</button>
+      <br/>
+      <input type="text" value="{{c}}" />
+    </form>
+  </div>
+</div>
+{% endblock %}

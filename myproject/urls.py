@@ -24,5 +24,7 @@ urlpatterns = [
     path('about/<slug:courseid>', views.courseDetail),
     path("submitform/",views.submitform,name="submitform"),
     path('product/',views.products, name="product"),
-    path("userform/",views.userForm)
+    path("userform/",views.userForm),
+    path("calculator/",views.calculator)
+
 ]
