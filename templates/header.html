@@ -27,9 +27,9 @@
               {% url "product" as url %} 
               {% comment %} using this we use url variable instead or path  {% endcomment %}
               <li  class="{%  if request.path == url %} active {% endif %}"><a href="{% url 'product' %}">Products</a></li>
-              <li  class="{%  if request.path == '' %} active {% endif %}"><a href="#">Testimonials</a></li>
+              <li  class="{%  if request.path == '/evenodd/' %} active {% endif %}"><a href="/evenodd/">EvenOdd</a></li>
               <li  class="{%  if request.path == '/about-us/' %} active {% endif %}"><a href="/about-us">About us</a></li>
-              <li  class="{%  if request.path == '' %} active {% endif %}"><a href="/about">Contact us</a></li>
+              <li  class="{%  if request.path == '' %} active {% endif %}"><a href="/marksheet">Simple Marksheet</a></li>
               <li  class="{%  if request.path == '/calculator' %} active {% endif %}"><a href="/calculator">Calculator</a></li>
               <button class="but"><a href="/userform/">Login</a></button>
             </ul>

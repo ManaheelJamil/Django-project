@@ -1,0 +1,75 @@
+{% extends "base.html" %} {% block blockname %}
+<div cl>
+  <div class="form-container">
+    <h3>Simple Marksheet</h3>
+    <form method="post">
+      {% csrf_token %}
+      <label>Subject 1</label>
+      <input
+        type="text"
+        id="num1"
+        value="{{n1}}"
+        name="num1"
+        placeholder="Enter first number"
+      />
+           <label>Subject 2</label>
+      <input
+        type="text"
+        id="num2"
+        value="{{n2}}"
+        name="num2"
+        placeholder="Enter second number"
+      />
+          <label>Subject 3</label>
+      <input
+        type="text"
+        id="num1"
+        value="{{n1}}"
+        name="num3"
+        placeholder="Enter first number"
+      />
+           <label>Subject 4</label>
+      <input
+        type="text"
+        id="num2"
+        value="{{n2}}"
+        name="num4"
+        placeholder="Enter second number"
+      />
+          <label>Subject 5</label>
+      <input
+        type="text"
+        id="num1"
+        value="{{n1}}"
+        name="num5"
+        placeholder="Enter first number"
+      />
+              <button type="submit">Marksheet</button>
+ <label>Total</label>
+      <input
+        type="text"
+        id="num1"
+        value="{{total}}"
+        name="num6"
+        placeholder="Enter first number"
+      />
+           <label>Pecentage</label>
+      <input
+        type="text"
+        id="num2"
+        value="{{per}}"
+        name="num7"
+        placeholder="Enter second number"
+      />
+          <label>Division</label>
+      <input
+        type="text"
+        id="num1"
+        value="{{div}}"
+        name="num8"
+        placeholder="Enter first number"
+      />
+    </form>
+  </div>
+</div>
+{% endblock %}

@@ -116,3 +116,31 @@ def evenodd(request):
     
 
     return render(request,"evenodd.html",{"c":c})
+
+def marksheet(request):
+    c=""
+    if request.method == "POST":
+        n1 = eval(request.POST.get("num1"))
+        n2 = eval(request.POST.get("num2"))
+        n3 = eval(request.POST.get("num3"))
+        n4 = eval(request.POST.get("num4"))
+        n5 = eval(request.POST.get("num5"))
+        c = n1+n2+n3+n4+n5
+        p = c*100/500
+        if p >= 90:
+            d = "A+ Grade"
+        elif p >= 80:
+            d = "A Grade"
+        elif p >= 60:
+            d = "B Grade"
+        elif p >= 50:
+            d = "C Grade"
+        else:
+            d = "Fail"    
+        data={
+            "total":c,
+            "per":p,
+            "div":d
+        }
+        return render(request,"marksheet.html",data)
+    return render(request, "marksheet.html")

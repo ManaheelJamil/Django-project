@@ -26,5 +26,7 @@ urlpatterns = [
     path('product/',views.products, name="product"),
     path("userform/",views.userForm),
     path("calculator/",views.calculator),
-    path("evenodd/",views.evenodd)
+    path("evenodd/",views.evenodd),
+    path("marksheet/",views.marksheet)
+
 ]
