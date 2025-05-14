@@ -104,3 +104,15 @@ def calculator(request):
         c = "Invalid opr......"               
 
     return render(request,"calculator.html",{'c':c})
+
+def evenodd(request):
+    c=""
+    if request.method == "POST":
+        n = eval(request.POST.get("num1"))
+        if n%2 ==0:
+            c = "Even number"
+        else:
+            c="odd number"
+    
+
+    return render(request,"evenodd.html",{"c":c})

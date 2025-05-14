@@ -25,6 +25,6 @@ urlpatterns = [
     path("submitform/",views.submitform,name="submitform"),
     path('product/',views.products, name="product"),
     path("userform/",views.userForm),
-    path("calculator/",views.calculator)
-
+    path("calculator/",views.calculator),
+    path("evenodd/",views.evenodd)
 ]
