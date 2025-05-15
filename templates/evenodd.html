@@ -1,10 +1,10 @@
 {% extends "base.html" %} {% block blockname %}
 <div class="body">
   <div class="form-container">
-    <h3>Find Even Odd</h3>
-    <form class="calculator" method="post">
+    <h3 >Find Even Odd</h3>
+    <form class="" method="post">
       {% if error %}
-      <div>A simple danger alert—check it out!</div>
+      <div class="alert">A simple danger alert—check it out!</div>
       {% endif %} 
       {% csrf_token %}
       <input
@@ -15,8 +15,7 @@
         placeholder="Enter first number"
       />
       <button type="submit">Even | Odd</button>
-      <br />
-      <input type="text" value="{{c}}" />
+      <input type="text" value="{{c}}" placeholder="Even or Odd" />
     </form>
   </div>
 </div>
