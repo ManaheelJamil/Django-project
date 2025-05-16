@@ -10,4 +10,5 @@ class About(models.Model):
     about_title= models.CharField(max_length=50)
     about_des=models.TextField()
 
-        
+class Contact(models.Model):
+    contact_text= models.CharField(max_length=50)
